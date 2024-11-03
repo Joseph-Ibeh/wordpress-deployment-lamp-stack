@@ -9,6 +9,7 @@ This documentation describes the steps I used to install WordPress on an Apache2
 ## Basics
 
 1. Created a directory `wordpress` in my Git Bash CLI.
+
 `mkdir wordpress`
 
 ![mkdir](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/mkdir%20cd%20wordpress.png)
@@ -19,8 +20,10 @@ This documentation describes the steps I used to install WordPress on an Apache2
 
 ![init](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/vagrant%20init.png)
 
+
 3. Edited the Vagrantfile with:
-vim Vagrantfile
+
+`vim Vagrantfile`
 
 -Uncommented the # symbol for config.vm.network "private_network" and set it to IP 192.168.56.26.
 -Uncommented the # symbol for config.vm.network "public_network".
@@ -38,8 +41,9 @@ vim Vagrantfile
 
 
 4. Started and connected to the VM:
-vagrant up
-vagrant ssh
+`vagrant up`
+
+`vagrant ssh`
 
 ![vagrant up](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/vagrant%20up.png)
 
@@ -47,6 +51,7 @@ vagrant ssh
 
 
 5. Switched to the root user: 
+ 
  `sudo -i`
 
 6. Changed the hostname:
@@ -72,7 +77,7 @@ First, i updated the package list:
 
 Then, i installed PHP, Apache, MySQL, and other necessary packages:
 
-sudo apt install apache2 \
+`sudo apt install apache2 \
                  ghostscript \
                  libapache2-mod-php \
                  mysql-server \
@@ -85,10 +90,11 @@ sudo apt install apache2 \
                  php-mbstring \
                  php-mysql \
                  php-xml \
-                 php-zip -y
+                 php-zip -y`
 
 To check the installation, i used:
  ` ls -ld /srv/www/`
+ 
   `ls -l /srv/www/wordpress/`
 
  ![ls](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ls%20after%20installation.png)
@@ -96,7 +102,9 @@ To check the installation, i used:
 Step 2: Installed  WordPress
 
   `sudo mkdir -p /srv/www`
+ 
   `sudo chown www-data: /srv/www`
+ 
   `curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www`
 
  ![ls](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/sudo%20mkdir%20-p....png)
@@ -131,8 +139,11 @@ Saved and exited with `Esc` `:wq`
 - Enabled the Site and URL Rewriting by using this command one after the other 
 
   `sudo a2ensite wordpress`
-  `sudo a2enmod rewrite`
+
+   `sudo a2enmod rewrite`
+
   `sudo a2dissite 000-default`
+
   `sudo service apache2 reload`
 
  ![enable the site and url](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/sudo%20a2ensite%20wordpress.png)
