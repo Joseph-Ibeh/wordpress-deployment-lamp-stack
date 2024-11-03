@@ -29,8 +29,11 @@ vim Vagrantfile
 -Saved and exited with Esc :wq.
 
 ![ip private network](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/config%20private%20network.png)
+
 ![public network](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/config%20pub%20network.png)
+
 ![virtual box](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/uncoment%20vb.png)
+
 ![memory](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/set%20memory.png)
 
 
@@ -189,6 +192,7 @@ Ran the following to get my ip address and opened it on the browser:
   `ip addr show`
 
 ![ip output1](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ip%20addr%20output%201.png) 
+
 ![cont](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ipaddr%20output1b.png)
 
 - I Copied  the IP, pasted it in my browser, and completed the WordPress setup:
