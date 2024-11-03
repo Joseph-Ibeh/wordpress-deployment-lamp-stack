@@ -64,7 +64,9 @@ This documentation describes the steps I used to install WordPress on an Apache2
 7. Logged out and back in to apply changes:
 
   `exit`
+  
   `vagrant ssh`
+ 
   `sudo -i`
 
 
@@ -161,9 +163,13 @@ Connected to MySQL and created the database and user:
 -Ran the following commands one after the other "admin123 is the password i chose".
 
 `CREATE DATABASE wordpress;`
+
 `CREATE USER wordpress@localhost IDENTIFIED BY 'admin123';`
+
 `GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost;`
+
 `FLUSH PRIVILEGES;`
+
 `quit;`
 
 
@@ -172,8 +178,11 @@ Step 5: Configured WordPress to Connect to the Database.
 I used this command  one after the other. I used admin123 as seen in this lines of code as my password.
 
   `sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php`
+ 
   `sudo -u www-data sed -i 's/database_name_here/wordpress/' /srv/www/wordpress/wp-config.php`
+  
   `sudo -u www-data sed -i 's/username_here/wordpress/' /srv/www/wordpress/wp-config.php`
+  
   `sudo -u www-data sed -i 's/password_here/admin123/' /srv/www/wordpress/wp-config.php`
 
 - Added Security Keys
