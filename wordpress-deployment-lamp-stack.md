@@ -38,8 +38,8 @@ vim Vagrantfile
 
 
 4. Started and connected to the VM:
-`vagrant up`
-`vagrant ssh`
+vagrant up
+vagrant ssh
 
 ![vagrant up](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/vagrant%20up.png)
 
@@ -72,7 +72,7 @@ First, i updated the package list:
 
 Then, i installed PHP, Apache, MySQL, and other necessary packages:
 
-`sudo apt install apache2 \
+sudo apt install apache2 \
                  ghostscript \
                  libapache2-mod-php \
                  mysql-server \
@@ -85,7 +85,7 @@ Then, i installed PHP, Apache, MySQL, and other necessary packages:
                  php-mbstring \
                  php-mysql \
                  php-xml \
-                 php-zip -y`
+                 php-zip -y
 
 To check the installation, i used:
  ` ls -ld /srv/www/`
