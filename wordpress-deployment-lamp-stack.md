@@ -16,6 +16,7 @@ This documentation describes the steps I used to install WordPress on an Apache2
 
 
 2. Initialized a Vagrant box with the command:
+
     ` vagrant init ubuntu/focal64`
 
 ![init](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/vagrant%20init.png)
@@ -41,6 +42,7 @@ This documentation describes the steps I used to install WordPress on an Apache2
 
 
 4. Started and connected to the VM:
+
 `vagrant up`
 
 `vagrant ssh`
@@ -73,6 +75,7 @@ This documentation describes the steps I used to install WordPress on an Apache2
 ## Installed and Configured WordPress
 
 Step 1: Installed  Dependencies
+
 First, i updated the package list:
 
 `sudo apt update`
@@ -95,6 +98,7 @@ Then, i installed PHP, Apache, MySQL, and other necessary packages:
                  php-zip -y`
 
 To check the installation, i used:
+ 
  ` ls -ld /srv/www/`
  
   `ls -l /srv/www/wordpress/`
@@ -133,7 +137,7 @@ Step 3: Configured Apache for WordPress
     </Directory>
 </VirtualHost>`
 
-Saved and exited with `Esc` `:wq`
+Saved and exited with `Esc`  `:wq`
 
  ![vim](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/replace%20this%20file%20sudo%20-u%20www-data%20vim%20srv%20%20www%20wordpress%20wp-config.php.png)
 
