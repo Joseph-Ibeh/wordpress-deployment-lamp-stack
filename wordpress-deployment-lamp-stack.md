@@ -9,10 +9,15 @@ This documentation describes the steps I used to install WordPress on an Apache2
 ## Basics
 
 1. Created a directory `wordpress` in my Git Bash CLI.
-`sudo mkdir -p /srv/www`
+`mkdir wordpress`
+
+![mkdir](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/mkdir%20cd%20wordpress.png)
+
 
 2. Initialized a Vagrant box with the command:
     ` vagrant init ubuntu/focal64`
+
+![init](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/vagrant%20init.png)
 
 3. Edited the Vagrantfile with:
 vim Vagrantfile
@@ -23,10 +28,19 @@ vim Vagrantfile
 -Set vb.memory to "1600".
 -Saved and exited with Esc :wq.
 
+![ip private network](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/config%20private%20network.png)
+![public network](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/config%20pub%20network.png)
+![virtual box](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/uncoment%20vb.png)
+![memory](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/set%20memory.png)
+
+
 4. Started and connected to the VM:
 `vagrant up`
 `vagrant ssh`
 
+![vagrant up](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/vagrant%20up.png)
+
+![vagrant ssh](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/vagrant%20ssh.png)
 
 
 5. Switched to the root user: 
@@ -37,6 +51,7 @@ vim Vagrantfile
   `vim /etc/hostname`
 
   Typed wordpress, then saved and exited.
+
 
 7. Logged out and back in to apply changes:
 
@@ -73,7 +88,7 @@ To check the installation, i used:
  ` ls -ld /srv/www/`
   `ls -l /srv/www/wordpress/`
 
-
+ ![ls](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ls%20after%20installation.png)
 
 Step 2: Installed  WordPress
 
@@ -81,6 +96,7 @@ Step 2: Installed  WordPress
   `sudo chown www-data: /srv/www`
   `curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www`
 
+ ![ls](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/sudo%20mkdir%20-p....png)
 
 
 Step 3: Configured Apache for WordPress
@@ -106,6 +122,9 @@ Step 3: Configured Apache for WordPress
 
 Saved and exited with `Esc` `:wq`
 
+ ![vim](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/replace%20this%20file%20sudo%20-u%20www-data%20vim%20srv%20%20www%20wordpress%20wp-config.php.png)
+
+
 - Enabled the Site and URL Rewriting by using this command one after the other 
 
   `sudo a2ensite wordpress`
@@ -113,12 +132,16 @@ Saved and exited with `Esc` `:wq`
   `sudo a2dissite 000-default`
   `sudo service apache2 reload`
 
+ ![enable the site and url](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/sudo%20a2ensite%20wordpress.png)
 
 
 Step 4: Configured the Database
 Connected to MySQL and created the database and user:
   
   `sudo mysql -u root`
+
+   ![enable the site and url](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/sudo%20mysql%20-u%20root.png)
+
 
 
 -Ran the following commands one after the other "admin123 is the password i chose".
@@ -158,18 +181,23 @@ I Found and deleted the following lines:
   I Replaced them with content from https://api.wordpress.org/secret-key/1.1/salt/. Save and close (ctrl+x followed by y then enter).
 
 
+![the replaced key](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/sudo%20-u%20www-data%20cp%20srv%20www%20wordpress%20config%20sample.png)
 
 Step 6: Configured WordPress from the Browser
-Ran the following to get my ip address:
+Ran the following to get my ip address and opened it on the browser:
 
   `ip addr show`
+
+![ip output1](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ip%20addr%20output%201.png) 
+![cont](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ipaddr%20output1b.png)
 
 - I Copied  the IP, pasted it in my browser, and completed the WordPress setup:
 Entered my site title, username, password, and email.
 Clicked “Install WordPress” and logged in to start.
 
+![filled details](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/deployed%20wordpress%20fill%20details.png)
 
-
+![word press deployed](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/wordpress%20deployed.png)
 
 
 ## Skills and Lessons Acquired
