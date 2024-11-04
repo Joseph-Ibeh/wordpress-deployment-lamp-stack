@@ -97,13 +97,16 @@ Then, i installed PHP, Apache, MySQL, and other necessary packages:
                  php-xml \
                  php-zip -y`
 
+
+ ![ls](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ls%20after%20installation.png)
+
+
 To check the installation, i used:
  
  ` ls -ld /srv/www/`
  
   `ls -l /srv/www/wordpress/`
 
- ![ls](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ls%20after%20installation.png)
 
 Step 2: Installed  WordPress
 
