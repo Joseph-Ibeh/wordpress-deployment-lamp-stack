@@ -101,12 +101,6 @@ Then, i installed PHP, Apache, MySQL, and other necessary packages:
  ![ls](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/ls%20after%20installation.png)
 
 
-To check the installation, i used:
- 
- ` ls -ld /srv/www/`
- 
-  `ls -l /srv/www/wordpress/`
-
 
 Step 2: Installed  WordPress
 
@@ -118,6 +112,12 @@ Step 2: Installed  WordPress
 
  ![ls](https://github.com/Joseph-Ibeh/wordpress-deployment-lamp-stack/blob/main/screenshots/sudo%20mkdir%20-p....png)
 
+ 
+To check the installation, i used:
+ 
+ ` ls -ld /srv/www/`
+ 
+  `ls -l /srv/www/wordpress/`
 
 Step 3: Configured Apache for WordPress
 -I Opened the configuration file:
