@@ -62,6 +62,8 @@ This documentation describes the steps I used to install WordPress on an Apache2
 
   Typed wordpress, then saved and exited.
 
+  Type `hostname wordpress`
+
 
 7. Logged out and back in to apply changes:
 
